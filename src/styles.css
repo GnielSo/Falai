@@ -789,6 +789,316 @@
 
 }
 
+
+/* ======================================================
+   FALAI - COMPONENTE STATUS BADGE
+====================================================== */
+
+.falai-status-badge {
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  width: fit-content;
+  max-width: 100%;
+  min-width: 0;
+
+  padding: 6px 12px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  border: 1px solid transparent;
+  border-radius: 999px;
+
+  vertical-align: middle;
+
+  box-sizing: border-box;
+}
+
+
+/* ======================================================
+   ÍCONES
+====================================================== */
+
+.falai-status-badge__icon {
+
+  display: block;
+
+  width: 15px;
+  height: 15px;
+
+  flex-shrink: 0;
+}
+
+
+/* ======================================================
+   TEXTO
+====================================================== */
+
+.falai-status-badge__label {
+
+  min-width: 0;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ======================================================
+   STATUS NEUTRO
+   Recebida / Não informado / Normal
+====================================================== */
+
+.falai-status-badge--neutral {
+
+  color: #475569;
+
+  background: #f1f5f9;
+
+  border-color: #cbd5e1;
+}
+
+
+/* ======================================================
+   STATUS DE ATENÇÃO
+   Em análise / Gravidade moderada
+====================================================== */
+
+.falai-status-badge--warning {
+
+  color: #92400e;
+
+  background: #fef3c7;
+
+  border-color: #fcd34d;
+}
+
+
+/* ======================================================
+   STATUS INFORMATIVO
+   Em andamento / Em atendimento
+====================================================== */
+
+.falai-status-badge--info {
+
+  color: #1d4ed8;
+
+  background: #dbeafe;
+
+  border-color: #bfdbfe;
+}
+
+
+/* ======================================================
+   STATUS VALIDADO
+====================================================== */
+
+.falai-status-badge--purple {
+
+  color: #6d28d9;
+
+  background: #f3e8ff;
+
+  border-color: #ddd6fe;
+}
+
+
+/* ======================================================
+   STATUS DE SUCESSO
+   Resolvida / Solucionado / Gravidade baixa
+====================================================== */
+
+.falai-status-badge--success {
+
+  color: #166534;
+
+  background: #dcfce7;
+
+  border-color: #bbf7d0;
+}
+
+
+/* ======================================================
+   GRAVIDADE ALTA
+====================================================== */
+
+.falai-status-badge--orange {
+
+  color: #9a3412;
+
+  background: #ffedd5;
+
+  border-color: #fed7aa;
+}
+
+
+/* ======================================================
+   STATUS CRÍTICO
+   Rejeitada / Gravidade crítica
+====================================================== */
+
+.falai-status-badge--danger {
+
+  color: #b91c1c;
+
+  background: #fee2e2;
+
+  border-color: #fecaca;
+}
+
+
+/* ======================================================
+   TAMANHO PEQUENO
+====================================================== */
+
+.falai-status-badge--small {
+
+  padding: 4px 8px;
+
+  font-size: 11px;
+
+  gap: 4px;
+}
+
+
+.falai-status-badge--small
+.falai-status-badge__icon {
+
+  width: 13px;
+  height: 13px;
+}
+
+
+/* ======================================================
+   TAMANHO MÉDIO
+====================================================== */
+
+.falai-status-badge--medium {
+
+  padding: 6px 12px;
+
+  font-size: 12px;
+}
+
+
+/* ======================================================
+   TAMANHO GRANDE
+====================================================== */
+
+.falai-status-badge--large {
+
+  padding: 8px 16px;
+
+  font-size: 14px;
+
+  gap: 8px;
+}
+
+
+.falai-status-badge--large
+.falai-status-badge__icon {
+
+  width: 18px;
+  height: 18px;
+}
+
+
+/* ======================================================
+   RESPONSIVIDADE - TABLETS
+====================================================== */
+
+@media (max-width: 1024px) {
+
+  .falai-status-badge {
+
+    gap: 5px;
+  }
+
+  .falai-status-badge--medium {
+
+    padding: 5px 10px;
+  }
+
+}
+
+
+/* ======================================================
+   RESPONSIVIDADE - CELULARES
+====================================================== */
+
+@media (max-width: 600px) {
+
+  .falai-status-badge--medium {
+
+    padding: 5px 8px;
+
+    font-size: 12px;
+  }
+
+  .falai-status-badge--large {
+
+    padding: 6px 12px;
+
+    font-size: 13px;
+  }
+
+  .falai-status-badge__icon {
+
+    width: 14px;
+    height: 14px;
+  }
+
+}
+
+
+/* ======================================================
+   ACESSIBILIDADE - LEITORES DE TELA
+====================================================== */
+
+.falai-status-badge__sr-only {
+
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+
+  white-space: nowrap;
+
+  border: 0;
+}
+
+
+/* ======================================================
+   ACESSIBILIDADE - ALTO CONTRASTE
+====================================================== */
+
+@media (forced-colors: active) {
+
+  .falai-status-badge {
+
+    border: 1px solid CanvasText;
+
+    color: CanvasText;
+
+    background: Canvas;
+  }
+
+}
+
 /* ==================================
    DASHBOARD - GRÁFICOS
    ================================== */
