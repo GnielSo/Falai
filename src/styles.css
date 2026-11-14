@@ -28,6 +28,432 @@
 }
 
 /* ======================================================
+   1. ESTRUTURA PRINCIPAL
+====================================================== */
+
+.falai-button {
+
+  --button-background: #087f69;
+  --button-color: #ffffff;
+  --button-border: #087f69;
+  --button-hover: #065f50;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+
+  padding: 11px 20px;
+
+  background: var(--button-background);
+
+  color: var(--button-color);
+
+  border: 1px solid var(--button-border);
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  text-align: center;
+
+  box-sizing: border-box;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* ======================================================
+   2. VARIANTE PRIMARY
+====================================================== */
+
+.falai-button--primary {
+
+  --button-background: #087f69;
+  --button-color: #ffffff;
+  --button-border: #087f69;
+  --button-hover: #065f50;
+
+}
+
+
+/* ======================================================
+   3. VARIANTE SECONDARY
+====================================================== */
+
+.falai-button--secondary {
+
+  --button-background: #e6f4ef;
+  --button-color: #065f50;
+  --button-border: #cce9df;
+  --button-hover: #d2ebe2;
+
+}
+
+
+/* ======================================================
+   4. VARIANTE OUTLINE
+====================================================== */
+
+.falai-button--outline {
+
+  --button-background: transparent;
+  --button-color: #087f69;
+  --button-border: #087f69;
+  --button-hover: #e6f4ef;
+
+}
+
+
+/* ======================================================
+   5. VARIANTE DANGER
+====================================================== */
+
+.falai-button--danger {
+
+  --button-background: #b91c1c;
+  --button-color: #ffffff;
+  --button-border: #b91c1c;
+  --button-hover: #991b1b;
+
+}
+
+
+/* ======================================================
+   6. VARIANTE GHOST
+====================================================== */
+
+.falai-button--ghost {
+
+  --button-background: transparent;
+  --button-color: #087f69;
+  --button-border: transparent;
+  --button-hover: #e6f4ef;
+
+}
+
+
+/* ======================================================
+   7. TAMANHOS
+====================================================== */
+
+.falai-button--small {
+
+  min-height: 44px;
+
+  padding: 7px 12px;
+
+  font-size: 12px;
+
+  border-radius: 8px;
+}
+
+
+.falai-button--medium {
+
+  min-height: 44px;
+
+  padding: 11px 20px;
+
+  font-size: 14px;
+}
+
+
+.falai-button--large {
+
+  min-height: 52px;
+
+  padding: 14px 26px;
+
+  font-size: 15px;
+
+  border-radius: 12px;
+}
+
+
+/* ======================================================
+   8. ÍCONES E TEXTO
+====================================================== */
+
+.falai-button__icon,
+.falai-button__spinner {
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+
+  flex-shrink: 0;
+}
+
+
+.falai-button__icon svg {
+
+  width: 100%;
+  height: 100%;
+}
+
+
+.falai-button--small .falai-button__icon,
+.falai-button--small .falai-button__spinner {
+
+  width: 16px;
+  height: 16px;
+}
+
+
+.falai-button--large .falai-button__icon,
+.falai-button--large .falai-button__spinner {
+
+  width: 20px;
+  height: 20px;
+}
+
+
+.falai-button__label {
+
+  min-width: 0;
+
+  overflow-wrap: anywhere;
+
+}
+
+
+/* ======================================================
+   9. LARGURA TOTAL
+====================================================== */
+
+.falai-button--full-width {
+
+  display: flex;
+
+  width: 100%;
+
+}
+
+
+/* ======================================================
+   10. INTERAÇÃO COM O MOUSE
+====================================================== */
+
+@media (hover: hover) {
+
+  .falai-button:not(:disabled):hover {
+
+    background: var(--button-hover);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+      0 4px 10px rgba(15, 23, 42, 0.08);
+
+  }
+
+}
+
+
+.falai-button:not(:disabled):active {
+
+  transform: translateY(0);
+
+  box-shadow: none;
+
+}
+
+
+/* ======================================================
+   11. ACESSIBILIDADE - FOCO POR TECLADO
+====================================================== */
+
+.falai-button:focus-visible {
+
+  outline: 3px solid #087f69;
+
+  outline-offset: 3px;
+
+}
+
+
+/* ======================================================
+   12. ESTADO DESABILITADO
+====================================================== */
+
+.falai-button:disabled {
+
+  background: #e2e8f0;
+
+  color: #64748b;
+
+  border-color: #cbd5e1;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+
+  transform: none;
+
+}
+
+
+/* ======================================================
+   13. ESTADO DE CARREGAMENTO
+====================================================== */
+
+.falai-button--loading:disabled {
+
+  background: var(--button-background);
+
+  color: var(--button-color);
+
+  border-color: var(--button-border);
+
+  cursor: wait;
+
+}
+
+
+.falai-button__spinner {
+
+  animation: falai-button-spin 0.9s linear infinite;
+
+}
+
+
+@keyframes falai-button-spin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* ======================================================
+   14. RESPONSIVIDADE - TABLETS
+====================================================== */
+
+@media (max-width: 1024px) {
+
+  .falai-button--medium {
+
+    padding: 10px 17px;
+
+  }
+
+  .falai-button--large {
+
+    padding: 13px 22px;
+
+  }
+
+}
+
+
+/* ======================================================
+   15. RESPONSIVIDADE - CELULARES
+====================================================== */
+
+@media (max-width: 600px) {
+
+  .falai-button {
+
+    gap: 7px;
+
+    min-height: 44px;
+
+  }
+
+  .falai-button--medium {
+
+    padding: 10px 14px;
+
+    font-size: 13px;
+
+  }
+
+  .falai-button--large {
+
+    min-height: 48px;
+
+    padding: 12px 18px;
+
+    font-size: 14px;
+
+  }
+
+}
+
+
+/* ======================================================
+   16. ACESSIBILIDADE - REDUÇÃO DE MOVIMENTO
+====================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .falai-button {
+
+    transition: none;
+
+  }
+
+  .falai-button:not(:disabled):hover {
+
+    transform: none;
+
+  }
+
+  .falai-button__spinner {
+
+    animation: none;
+
+  }
+
+}
+
+
+/* ======================================================
+   17. ACESSIBILIDADE - ALTO CONTRASTE
+====================================================== */
+
+@media (forced-colors: active) {
+
+  .falai-button {
+
+    border: 1px solid ButtonText;
+
+  }
+
+  .falai-button:focus-visible {
+
+    outline-color: Highlight;
+
+  }
+
+}
+
+/* ======================================================
    FALAI - STAT CARD
 ====================================================== */
 

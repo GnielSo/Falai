@@ -22,9 +22,11 @@ import {
   Clock,
   Activity,
   CircleCheck,
-  ListChecks
+  ListChecks,
+  Plus,
+  ArrowUpRight,
+  ArrowRight
 } from 'lucide-react';
-
 
 // ======================================================
 // COMPONENTE HOME
@@ -66,18 +68,26 @@ export default function Home({ reports, navigate }) {
 
           <div className="welcome-actions">
 
-            <Button onClick={() => navigate('registrar')}>
-              ＋ Registrar um problema
-            </Button>
+            <Button
+             variant="primary"
+             size="large"
+             icon={Plus}
+             onClick={() => navigate('registrar')}
+             >
+                 Registrar um problema
+             </Button>
 
-            <button
-              className="hero-link"
-              onClick={() => navigate('mapa')}
+            <Button
+             variant="outline"
+             size="large"
+             icon={ArrowUpRight}
+             iconPosition="right"
+             onClick={() => navigate('mapa')}
             >
-              Explorar mapa <span>↗</span>
-            </button>
+             Explorar mapa
+         </Button>
 
-          </div>
+        </div>
 
         </div>
 
@@ -335,18 +345,19 @@ export default function Home({ reports, navigate }) {
 
           {/* Botão de registro */}
 
-          <button
-            className="text-action learn-more"
-            onClick={() => navigate('registrar')}
-          >
+         <Button
+         variant="ghost"
+        size="medium"
+         icon={ArrowRight}
+         iconPosition="right"
+         onClick={() => navigate('registrar')}
+    >
+        Fazer meu primeiro registro
+        </Button>
 
-            Fazer meu primeiro registro →
+     </section>
 
-          </button>
-
-        </section>
-
-      </div>
+     </div>
 
     </>
 
