@@ -119,6 +119,321 @@
     color: #64748b;
     margin: 0;
 }
+
+/* ======================================================
+   FALAI - IDENTIDADE VISUAL
+====================================================== */
+
+.falai-brand {
+
+  /* Variáveis de identidade visual */
+
+  --brand-primary: #087f69;
+  --brand-primary-dark: #065f50;
+  --brand-text: #fcfcfc;
+  --brand-muted: #52616b;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 12px;
+
+  width: fit-content;
+  max-width: 100%;
+  min-width: 0;
+
+  padding: 8px 4px;
+
+  font-family: inherit;
+  text-align: left;
+
+  background: transparent;
+  border: none;
+
+  box-sizing: border-box;
+}
+
+
+/* ======================================================
+   SÍMBOLO DA MARCA
+====================================================== */
+
+.falai-brand__symbol {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  border-radius: 15px;
+
+  background: linear-gradient(
+    145deg,
+    var(--brand-primary),
+    var(--brand-primary-dark)
+  );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 4px 12px rgba(8, 127, 105, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.falai-brand__symbol svg {
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+.falai-brand__dot {
+
+  fill: var(--brand-primary-dark);
+}
+
+
+/* ======================================================
+   IDENTIDADE TEXTUAL
+====================================================== */
+
+.falai-brand__identity {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 4px;
+
+  min-width: 0;
+}
+
+
+/* Nome FALAI */
+
+.falai-brand__name {
+
+  display: block;
+
+  font-size: clamp(24px, 2.5vw, 30px);
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -1.2px;
+
+  color: var(--brand-text);
+
+  white-space: nowrap;
+}
+
+
+/* Destaque das letras AI */
+
+.falai-brand__name span {
+
+  color: var(--brand-primary);
+}
+
+
+/* Subtítulo */
+
+.falai-brand__subtitle {
+
+  display: block;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+
+  color: var(--brand-muted);
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ======================================================
+   MARCA INTERATIVA
+====================================================== */
+
+.falai-brand--interactive {
+
+  cursor: pointer;
+
+  border-radius: 12px;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+
+@media (hover: hover) {
+
+  .falai-brand--interactive:hover
+  .falai-brand__symbol {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+      0 6px 16px rgba(8, 127, 105, 0.25);
+  }
+
+}
+
+
+.falai-brand--interactive:active
+.falai-brand__symbol {
+
+  transform: scale(0.96);
+}
+
+
+/* Acessibilidade por teclado */
+
+.falai-brand--interactive:focus-visible {
+
+  outline: 3px solid var(--brand-primary);
+
+  outline-offset: 5px;
+}
+
+
+/* ======================================================
+   VERSÃO COMPACTA
+====================================================== */
+
+.falai-brand--compact {
+
+  justify-content: center;
+
+  gap: 0;
+
+  padding: 6px;
+}
+
+
+.falai-brand--compact
+.falai-brand__symbol {
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 12px;
+}
+
+
+/* ======================================================
+   RESPONSIVIDADE - TABLETS
+====================================================== */
+
+@media (max-width: 1024px) {
+
+  .falai-brand {
+
+    gap: 10px;
+  }
+
+  .falai-brand__symbol {
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 13px;
+  }
+
+  .falai-brand__name {
+
+    font-size: 26px;
+  }
+
+  .falai-brand__subtitle {
+
+    font-size: 9px;
+
+    letter-spacing: 0.5px;
+  }
+
+}
+
+
+/* ======================================================
+   RESPONSIVIDADE - CELULARES
+====================================================== */
+
+@media (max-width: 600px) {
+
+  .falai-brand {
+
+    gap: 8px;
+
+    padding: 4px;
+  }
+
+  .falai-brand__symbol {
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 11px;
+  }
+
+  .falai-brand__name {
+
+    font-size: 23px;
+
+    letter-spacing: -0.8px;
+  }
+
+  .falai-brand__subtitle {
+
+    display: none;
+  }
+
+  .falai-brand--compact {
+
+    gap: 0;
+  }
+
+}
+
+
+/* ======================================================
+   ACESSIBILIDADE - REDUÇÃO DE MOVIMENTO
+====================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .falai-brand__symbol {
+
+    transition: none;
+  }
+
+  .falai-brand--interactive:hover
+  .falai-brand__symbol,
+
+  .falai-brand--interactive:active
+  .falai-brand__symbol {
+
+    transform: none;
+  }
+
+}
+
 /* ==================================
    DASHBOARD - GRÁFICOS
    ================================== */

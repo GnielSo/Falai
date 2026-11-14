@@ -34,7 +34,7 @@ export default function Sidebar({ page, navigate, open, close }) {
       <aside className={`sidebar ${open ? 'sidebar-open' : ''}`}>
 
         <div className="sidebar-brand">
-          <Brand />
+          <Brand onClick={() => navigate('home')} />
         </div>
 
         <div className="workspace-label">
