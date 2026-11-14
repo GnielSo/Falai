@@ -28,6 +28,461 @@
 }
 
 /* ======================================================
+   FALAI - STAT CARD
+====================================================== */
+
+.falai-stat-card {
+
+  --stat-accent: #087f69;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 170px;
+
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+/* ======================================================
+   BARRA DE IDENTIFICAÇÃO
+====================================================== */
+
+.falai-stat-card::after {
+
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 3px;
+
+  background: var(--stat-accent);
+}
+
+
+/* ======================================================
+   CABEÇALHO
+====================================================== */
+
+.falai-stat-card__header {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  min-width: 0;
+}
+
+
+/* ======================================================
+   TÍTULO
+====================================================== */
+
+.falai-stat-card__title {
+
+  margin: 0;
+
+  min-width: 0;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  color: #52616b;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ======================================================
+   ÍCONE
+====================================================== */
+
+.falai-stat-card__icon {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  font-size: 23px;
+
+  color: var(--stat-accent);
+
+  background: #f1f5f9;
+
+  background: color-mix(
+    in srgb,
+    var(--stat-accent) 10%,
+    white
+  );
+
+  border-radius: 12px;
+}
+
+
+.falai-stat-card__icon svg {
+
+  flex-shrink: 0;
+}
+
+
+/* ======================================================
+   VALOR PRINCIPAL
+====================================================== */
+
+.falai-stat-card__value {
+
+  font-family: inherit;
+
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 750;
+
+  font-variant-numeric: tabular-nums;
+
+  line-height: 1.2;
+
+  letter-spacing: -1px;
+
+  color: #172b36;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ======================================================
+   DESCRIÇÃO
+====================================================== */
+
+.falai-stat-card__description {
+
+  margin: 0;
+
+  margin-top: auto;
+
+  font-size: 12px;
+  font-weight: 400;
+
+  line-height: 1.6;
+
+  color: #64748b;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ======================================================
+   TENDÊNCIA
+====================================================== */
+
+.falai-stat-card__trend-row {
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+
+.falai-stat-card__trend {
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 4px 8px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  border-radius: 6px;
+}
+
+
+.falai-stat-card__trend--positive {
+
+  color: #166534;
+
+  background: #dcfce7;
+}
+
+
+.falai-stat-card__trend--negative {
+
+  color: #b91c1c;
+
+  background: #fee2e2;
+}
+
+
+.falai-stat-card__trend--neutral {
+
+  color: #475569;
+
+  background: #f1f5f9;
+}
+
+
+.falai-stat-card__trend-label {
+
+  font-size: 11px;
+
+  color: #64748b;
+}
+
+
+/* ======================================================
+   EFEITO HOVER
+====================================================== */
+
+@media (hover: hover) {
+
+  .falai-stat-card:hover {
+
+    transform: translateY(-3px);
+
+    border-color: var(--stat-accent);
+
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  }
+
+}
+
+
+/* ======================================================
+   CARREGAMENTO - SKELETON
+====================================================== */
+
+.falai-stat-card__loading {
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+
+.falai-stat-card__skeleton {
+
+  background: linear-gradient(
+    90deg,
+    #e2e8f0 25%,
+    #f1f5f9 50%,
+    #e2e8f0 75%
+  );
+
+  background-size: 200% 100%;
+
+  border-radius: 6px;
+
+  animation: falai-stat-loading 1.5s infinite;
+}
+
+
+.falai-stat-card__skeleton.skeleton-value {
+
+  width: 45%;
+  height: 36px;
+}
+
+
+.falai-stat-card__skeleton.skeleton-description {
+
+  width: 80%;
+  height: 12px;
+}
+
+
+@keyframes falai-stat-loading {
+
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+
+}
+
+
+/* ======================================================
+   RESPONSIVIDADE - TABLETS
+====================================================== */
+
+@media (max-width: 1024px) {
+
+  .falai-stat-card {
+
+    padding: 18px;
+
+    gap: 12px;
+
+    min-height: 155px;
+  }
+
+
+  .falai-stat-card__icon {
+
+    width: 42px;
+    height: 42px;
+  }
+
+
+  .falai-stat-card__value {
+
+    font-size: 30px;
+  }
+
+}
+
+
+/* ======================================================
+   RESPONSIVIDADE - CELULARES
+====================================================== */
+
+@media (max-width: 600px) {
+
+  .falai-stat-card {
+
+    padding: 14px;
+
+    min-height: 145px;
+
+    gap: 10px;
+
+    border-radius: 12px;
+  }
+
+
+  .falai-stat-card__header {
+
+    gap: 8px;
+  }
+
+
+  .falai-stat-card__title {
+
+    font-size: 12px;
+  }
+
+
+  .falai-stat-card__value {
+
+    font-size: 28px;
+  }
+
+
+  .falai-stat-card__icon {
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 9px;
+  }
+
+
+  .falai-stat-card__icon svg {
+
+    width: 19px;
+    height: 19px;
+  }
+
+
+  .falai-stat-card__description {
+
+    font-size: 12px;
+  }
+
+}
+
+
+/* ======================================================
+   ACESSIBILIDADE - LEITORES DE TELA
+====================================================== */
+
+.falai-stat-card__sr-only {
+
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+
+  clip-path: inset(50%);
+
+  white-space: nowrap;
+
+  border: 0;
+}
+
+
+/* ======================================================
+   ACESSIBILIDADE - REDUÇÃO DE MOVIMENTO
+====================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .falai-stat-card {
+
+    transition: none;
+  }
+
+
+  .falai-stat-card:hover {
+
+    transform: none;
+  }
+
+
+  .falai-stat-card__skeleton {
+
+    animation: none;
+  }
+
+}
+
+/* ======================================================
    FALAI - CABEÇALHO DAS SEÇÕES
 ====================================================== */
 
