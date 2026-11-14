@@ -29,7 +29,6 @@ function Home({ reports, navigate }) {
   const recent = reports.slice(0, 3);
   return <>
     <div className="welcome-strip"><div><span className="welcome-kicker">PARTICIPAÇÃO CIDADÃ</span><h1>Problemas da cidade.<br/><em>Soluções mais próximas.</em></h1><p>Uma cidade melhor começa quando a gente participa. Registre, acompanhe e ajude a transformar o lugar onde vive.</p><div className="welcome-actions"><Button onClick={() => navigate('registrar')}>＋ Registrar um problema</Button><button className="hero-link" onClick={() => navigate('mapa')}>Explorar mapa <span>↗</span></button></div></div><div className="hero-visual" aria-hidden="true"><div className="hero-orbit orbit-one"/><div className="hero-orbit orbit-two"/><div className="hero-pin">⌖</div><div className="hero-note note-top"><span className="note-dot green"/> Cidade em movimento</div><div className="hero-note note-bottom"><strong>103</strong><span>registros acompanhados</span></div><div className="hero-coordinate">3°07' S · 60°01' W</div></div></div>
-   
     {/* 
     <div className="stats-grid"><StatCard label="Ocorrências registradas" value="103" change="Participação da comunidade" icon="▤" tone="blue"/><StatCard label="Em análise" value="28" change="Aguardando avaliação" icon="◷" tone="amber"/><StatCard label="Em atendimento" value="17" change="Equipes mobilizadas" icon="↗" tone="violet"/><StatCard label="Resolvidas" value="46" change="Problemas solucionados" icon="✓" tone="green"/></div> 
     */}
