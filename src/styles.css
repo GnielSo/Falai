@@ -26,6 +26,391 @@
 .nav-item:hover .nav-icon {
     color: #54d8b3;
 }
+
+/* ======================================================
+   FALAI - CABEÇALHO DAS SEÇÕES
+====================================================== */
+
+.falai-section-header {
+
+  /* Identidade visual */
+
+  --section-primary: #087f69;
+  --section-primary-dark: #065f50;
+  --section-heading: #172b36;
+  --section-muted: #52616b;
+  --section-border: #e2e8f0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  gap: 16px;
+
+  width: 100%;
+  min-width: 0;
+
+  margin-bottom: 18px;
+
+  box-sizing: border-box;
+}
+
+
+/* ======================================================
+   DIVISÓRIA INFERIOR
+====================================================== */
+
+.falai-section-header--divider {
+
+  padding-bottom: 16px;
+
+  border-bottom: 1px solid var(--section-border);
+}
+
+
+/* ======================================================
+   CONTEÚDO PRINCIPAL
+====================================================== */
+
+.falai-section-header__main {
+
+  display: flex;
+  align-items: center;
+
+  flex: 1 1 180px;
+
+  gap: 12px;
+
+  min-width: 0;
+}
+
+
+.falai-section-header__content {
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  min-width: 0;
+}
+
+
+/* ======================================================
+   ÍCONE DA SEÇÃO
+====================================================== */
+
+.falai-section-header__icon {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  background: #e6f4ef;
+
+  color: var(--section-primary);
+
+  border: 1px solid #cce9df;
+  border-radius: 12px;
+}
+
+
+/* ======================================================
+   IDENTIFICAÇÃO COMPLEMENTAR
+====================================================== */
+
+.falai-section-header__eyebrow {
+
+  display: block;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  line-height: 1.5;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  color: var(--section-primary);
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ======================================================
+   TÍTULO DA SEÇÃO
+====================================================== */
+
+.falai-section-header__title {
+
+  margin: 0;
+
+  font-family: inherit;
+
+  font-size: clamp(17px, 2vw, 21px);
+  font-weight: 700;
+
+  line-height: 1.35;
+
+  letter-spacing: -0.4px;
+
+  color: var(--section-heading);
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ======================================================
+   DESCRIÇÃO
+====================================================== */
+
+.falai-section-header__description {
+
+  margin: 0;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.6;
+
+  color: var(--section-muted);
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ======================================================
+   BOTÃO DE AÇÃO
+====================================================== */
+
+.falai-section-header__action {
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  flex-shrink: 0;
+
+  min-height: 44px;
+  max-width: 100%;
+
+  padding: 8px 12px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  text-align: center;
+
+  color: var(--section-primary);
+
+  background: transparent;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.falai-section-header__action span {
+
+  min-width: 0;
+
+  overflow-wrap: anywhere;
+}
+
+
+.falai-section-header__action svg {
+
+  flex-shrink: 0;
+
+  transition: transform 0.2s ease;
+}
+
+
+/* ======================================================
+   INTERAÇÃO COM O MOUSE
+====================================================== */
+
+@media (hover: hover) {
+
+  .falai-section-header__action:hover {
+
+    color: var(--section-primary-dark);
+
+    background: #e6f4ef;
+
+    border-color: #cce9df;
+  }
+
+
+  .falai-section-header__action:hover svg {
+
+    transform: translateX(3px);
+  }
+
+}
+
+
+.falai-section-header__action:active {
+
+  background: #cce9df;
+}
+
+
+/* ======================================================
+   ACESSIBILIDADE POR TECLADO
+====================================================== */
+
+.falai-section-header__action:focus-visible {
+
+  outline: 3px solid var(--section-primary);
+
+  outline-offset: 3px;
+}
+
+
+/* ======================================================
+   RESPONSIVIDADE - TABLETS
+====================================================== */
+
+@media (max-width: 1024px) {
+
+  .falai-section-header {
+
+    gap: 12px;
+
+    margin-bottom: 16px;
+  }
+
+
+  .falai-section-header__title {
+
+    font-size: 19px;
+  }
+
+
+  .falai-section-header__icon {
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 10px;
+  }
+
+}
+
+
+/* ======================================================
+   RESPONSIVIDADE - CELULARES
+====================================================== */
+
+@media (max-width: 600px) {
+
+  .falai-section-header {
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 10px;
+
+    margin-bottom: 14px;
+  }
+
+
+  .falai-section-header--divider {
+
+    padding-bottom: 12px;
+  }
+
+
+  .falai-section-header__main {
+
+    flex: 1 1 auto;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+
+  .falai-section-header__title {
+
+    font-size: 17px;
+  }
+
+
+  .falai-section-header__description {
+
+    font-size: 13px;
+  }
+
+
+  .falai-section-header__icon {
+
+    width: 36px;
+    height: 36px;
+  }
+
+
+  .falai-section-header__icon svg {
+
+    width: 19px;
+    height: 19px;
+  }
+
+
+  .falai-section-header__action {
+
+    align-self: flex-end;
+
+    font-size: 12px;
+  }
+
+}
+
+
+/* ======================================================
+   ACESSIBILIDADE - REDUÇÃO DE MOVIMENTO
+====================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .falai-section-header__action,
+
+  .falai-section-header__action svg {
+
+    transition: none;
+  }
+
+
+  .falai-section-header__action:hover svg {
+
+    transform: none;
+  }
+
+}
+
 /* ==================================
    MODERNIZAÇÃO DO CABEÇALHO
    ================================== */
