@@ -1,4 +1,4 @@
-# FALAI — MVP migrado para React
+# FALAI —  React
 
 Esta versão inicia a migração do protótipo original (HTML, CSS e JavaScript) para React com Vite. O foco desta entrega é a identidade visual e a organização da interface, preservando as áreas e fluxos existentes.
 
